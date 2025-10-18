@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sync & Style — Clothing • Watches • Power Banks • Accessories</title>
+  <meta name="description" content="Sync & Style — curated clothing, premium watches, power banks and accessories." />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+  <style>
+    :root{
+      --bg:#0b0b0b; /* deep black */
+      --muted:#e9e9e9;
+      --gold:#d4af37; /* classic gold */
+      --card-bg:#0f0f10;
+      --glass: rgba(255,255,255,0.04);
+      --accent: rgba(212,175,55,0.12);
+      --max-width:1200px;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,'Helvetica Neue',Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#070707);color:var(--muted);-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    header{background:var(--bg);position:sticky;top:0;z-index:40;border-bottom:1px solid rgba(255,255,255,0.03)}
+    .container{max-width:var(--max-width);margin:0 auto;padding:28px}
+    .nav{display:flex;align-items:center;gap:18px;justify-content:space-between}
+    .brand{display:flex;gap:12px;align-items:center;font-weight:700;color:var(--gold);font-size:20px}
+    .brand .logo{width:44px;height:44px;background:linear-gradient(135deg,var(--gold),#b8860b);display:grid;place-items:center;border-radius:8px;color:#0b0b0b;font-weight:800}
+    nav ul{display:flex;gap:18px;align-items:center;margin:0;padding:0;list-style:none}
+    nav a{color:var(--muted);font-weight:600;font-size:14px}
+    .cta{background:transparent;border:1px solid var(--gold);padding:8px 12px;border-radius:8px;color:var(--gold);font-weight:700}
+
+    /* Hero */
+    .hero{padding:60px 0;display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center}
+    .hero-left h1{font-size:44px;margin:0 0 12px;line-height:1.02;color:white}
+    .tag{color:var(--gold);font-weight:700;margin-bottom:12px}
+    .hero p{color:rgba(233,233,233,0.78);margin:0 0 20px}
+    .hero .actions{display:flex;gap:12px}
+    .btn-primary{background:var(--gold);color:#0b0b0b;padding:12px 18px;border-radius:10px;font-weight:800;border:none}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:12px 18px;border-radius:10px}
+    .hero-right{background-image:linear-gradient(180deg,rgba(212,175,55,0.03),transparent);padding:18px;border-radius:14px}
+    .hero-product{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .hp{background:var(--card-bg);padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+    .hp img{width:100%;height:120px;object-fit:cover;border-radius:8px}
+
+    /* Products */
+    .section{padding:40px 0}
+    .section h2{font-size:24px;margin:0 0 10px;color:white}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);transition:transform .18s ease,box-shadow .18s}
+    .card:hover{transform:translateY(-6px);box-shadow:0 8px 30px rgba(0,0,0,0.6)}
+    .card img{width:100%;height:180px;object-fit:cover;border-radius:8px}
+    .meta{display:flex;justify-content:space-between;align-items:center;padding-top:10px}
+    .price{color:var(--gold);font-weight:800}
+    .tag-small{background:var(--glass);padding:6px 8px;border-radius:8px;font-size:12px}
+
+    /* Footer */
+    footer{padding:28px 0;border-top:1px solid rgba(255,255,255,0.03);margin-top:40px}
+    .footer-grid{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+    /* Responsive */
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      nav ul{display:none}
+    }
+
+    /* small utilities */
+    .muted{color:rgba(233,233,233,0.7)}
+    .center{display:grid;place-items:center}
+    .badge{background:var(--gold);color:#0b0b0b;padding:6px 10px;border-radius:8px;font-weight:800}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand"><div class="logo">S&S</div><div>Sync &amp; Style</div></div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div style="display:flex;align-items:center;gap:12px">
+        <button class="cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact</button>
+        <div class="badge" id="cartCount">0</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" id="home">
+    <section class="hero">
+      <div class="hero-left">
+        <div class="tag">Premium • Curated • Timeless</div>
+        <h1>Where tech meets fashion.</h1>
+        <p>Sync & Style blends modern accessories with curated apparel. Watches, power banks and more. Shop premium essentials that perform and impress.</p>
+        <div class="actions">
+          <button class="btn-primary" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Shop Now</button>
+          <button class="btn-ghost" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">Learn More</button>
+        </div>
+      </div>
+      <aside class="hero-right">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+          <div class="muted">Staff picks</div>
+          <div class="tag-small">New</div>
+        </div>
+        <div class="hero-product">
+          <div class="hp"><img src="https://images.unsplash.com/photo-1526178610231-8f3f35b3d2a8?q=80&w=800&auto=format&fit=crop" alt="Watch"><div style="padding-top:8px;font-weight:700">Aurum Watch</div><div class="muted">Classic chronograph</div></div>
+          <div class="hp"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=800&auto=format&fit=crop" alt="Shirt"><div style="padding-top:8px;font-weight:700">Mono Tee</div><div class="muted">Comfort fit</div></div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section" id="products">
+      <h2>Featured Products</h2>
+      <p class="muted">Curated selection across categories. Click Add to Cart to try the demo cart.</p>
+      <div class="grid" id="productGrid">
+        <!-- product cards injected by JS -->
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <h2>About Sync & Style</h2>
+      <p class="muted">Sync & Style is a concept store focusing on design forward accessories and everyday tech. We select durable items with clean aesthetics. This is a demo storefront for showcasing brand presence.</p>
+    </section>
+
+    <section class="section" id="contact">
+      <h2>Contact</h2>
+      <p class="muted">For wholesale or brand inquiries email <a href="mailto:hello@syncandstyle.example">hello@syncandstyle.example</a> or message on Instagram <a href="#">@syncandstyle</a>.</p>
+    </section>
+
+    <footer>
+      <div class="container footer-grid">
+        <div>
+          <div class="brand"><div class="logo">S&S</div><div>Sync &amp; Style</div></div>
+          <p class="muted" style="max-width:380px">Modern essentials. Fast shipping. Thoughtful design.</p>
+        </div>
+        <div>
+          <strong>Quick links</strong>
+          <div class="muted">Home • Products • About • Contact</div>
+        </div>
+        <div>
+          <strong>Payment</strong>
+          <div class="muted">Card, PayPal, Cash on delivery</div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    const products = [
+      {id:1,title:'Aurum Chrono Watch',category:'Watches',price:129.99,img:'https://images.unsplash.com/photo-1511974035430-5de47d3b95da?q=80&w=800&auto=format&fit=crop'},
+      {id:2,title:'Mono Cotton Tee',category:'Clothing',price:24.99,img:'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=800&auto=format&fit=crop'},
+      {id:3,title:'Volt 20K Power Bank',category:'Power Banks',price:39.99,img:'https://images.unsplash.com/photo-1585386959984-a415522c2b6a?q=80&w=800&auto=format&fit=crop'},
+      {id:4,title:'Edge Leather Wallet',category:'Accessories',price:19.99,img:'https://images.unsplash.com/photo-1539883328255-3f1f8f6f6b1d?q=80&w=800&auto=format&fit=crop'},
+      {id:5,title:'Nova Smartband',category:'Accessories',price:49.99,img:'https://images.unsplash.com/photo-1519744792095-2f2205e87b6f?q=80&w=800&auto=format&fit=crop'},
+      {id:6,title:'Urban Hoodie',category:'Clothing',price:54.99,img:'https://images.unsplash.com/photo-1520975927301-3f1b5b8f8b0b?q=80&w=800&auto=format&fit=crop'}
+    ];
+
+    const grid = document.getElementById('productGrid');
+    const cartCountEl = document.getElementById('cartCount');
+    let cart = JSON.parse(localStorage.getItem('ss_cart')||'[]');
+
+    function updateCartUI(){
+      cartCountEl.textContent = cart.length;
+      localStorage.setItem('ss_cart', JSON.stringify(cart));
+    }
+
+    function addToCart(id){
+      const p = products.find(x=>x.id===id);
+      if(!p) return;
+      cart.push({id:p.id,title:p.title,price:p.price});
+      updateCartUI();
+      flash("Added to cart: "+p.title);
+    }
+
+    function flash(msg){
+      const el = document.createElement('div');
+      el.textContent = msg;el.style.position='fixed';el.style.right='20px';el.style.bottom='20px';el.style.background='var(--gold)';el.style.color='#070707';el.style.padding='10px 14px';el.style.borderRadius='10px';el.style.zIndex=9999;
+      document.body.appendChild(el);
+      setTimeout(()=>el.remove(),1600);
+    }
+
+    function render(){
+      grid.innerHTML='';
+      products.forEach(p=>{
+        const card = document.createElement('div');card.className='card';
+        card.innerHTML = `<img src="${p.img}" alt="${p.title}"><div style='padding-top:8px;font-weight:700'>${p.title}</div><div class='muted' style='font-size:13px'>${p.category}</div><div class='meta'><div class='price'>${p.price.toFixed(2)} USD</div><div><button onclick='addToCart(${p.id})' style='background:none;border:1px solid rgba(255,255,255,0.06);padding:8px 10px;border-radius:8px;color:var(--muted);font-weight:700'>Add to Cart</button></div></div>`;
+        grid.appendChild(card);
+      });
+      updateCartUI();
+    }
+
+    render();
+  </script>
+</body>
+</html>
